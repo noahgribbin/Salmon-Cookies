@@ -3,27 +3,14 @@ body{
   background-color:#191C59;
   color:black;
 }
-#pikeplace{
+.text{
   font-family:arial;
   color:#A7383E;
 }
-#seatac{
-  font-family:arial;
-  color:#A7383E;
-}
-#southcenter{
-  font-family:arial;
-  color:#A7383E;
-}
-#bellevue{
-  font-family:arial;
-  color:#A7383E;
-}
-#alki{
-  font-family:arial;
-  color:#A7383E;
-}
-.special{
+.data{
   font-family:Georgia;
   color:#599532;
+}
+#salmon{
+  width:200px;
 }
