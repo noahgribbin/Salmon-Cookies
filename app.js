@@ -1,4 +1,6 @@
 
+var thymes = ['10am','11am','12pm','1pm','2pm','3pm','4pm','5pm' ]
+
 var pikeplace ={
   location: 'Pike Place Market',
   minCustHour:17 ,
@@ -21,7 +23,18 @@ function makeUL(array){
   }
   return myList;
 }
-var times1 = ['10am: ' + pikeplace.totalCookiesHour() + ' cookies','11am: ' + pikeplace.totalCookiesHour() + ' cookies','12pm: ' + pikeplace.totalCookiesHour() + ' cookies','1pm: ' + pikeplace.totalCookiesHour() + ' cookies','2pm: ' + pikeplace.totalCookiesHour() + ' cookies','3pm: ' + pikeplace.totalCookiesHour() + ' cookies','4pm: ' + pikeplace.totalCookiesHour() + ' cookies','5pm: ' + pikeplace.totalCookiesHour() + ' cookies'];
+
+var totals1 = []
+var string1 = []
+var total1 = 0
+for(var i=0; i<thymes.length;i++){
+  totals1.push(pikeplace.totalCookiesHour())
+  total1 += totals1[i]
+  string1.push(thymes[i]+': '+ totals1[i] + ' cookies')
+}
+string1.push('Total: '+ total1 + ' cookies')
+var times1 = string1
+
 makeUL(times1);
 
 
@@ -52,7 +65,18 @@ function makeUL2(array){
   }
   return myList2;
 }
-var times2 = ['10am: ' + seatac.totalCookiesHour() + ' cookies','11am: ' + seatac.totalCookiesHour() + ' cookies','12pm: ' + seatac.totalCookiesHour() + ' cookies','1pm: ' + seatac.totalCookiesHour() + ' cookies','2pm: ' + seatac.totalCookiesHour() + ' cookies','3pm: ' + seatac.totalCookiesHour() + ' cookies','4pm: ' + seatac.totalCookiesHour() + ' cookies','5pm: ' + seatac.totalCookiesHour() + ' cookies'];
+
+var totals2 = []
+var string2 = []
+var total2 = 0
+for(var i=0; i<thymes.length;i++){
+  totals2.push(seatac.totalCookiesHour())
+  total2 += totals2[i]
+  string2.push(thymes[i]+': '+ totals2[i] + ' cookies')
+}
+string2.push('Total: '+ total2 + ' cookies')
+var times2 = string2
+
 makeUL2(times2);
 
 
@@ -84,8 +108,20 @@ function makeUL3(array){
   }
   return myList3;
 }
-var times3 = ['10am: ' + southcenter.totalCookiesHour() + ' cookies','11am: ' + southcenter.totalCookiesHour() + ' cookies','12pm: ' + southcenter.totalCookiesHour() + ' cookies','1pm: ' + southcenter.totalCookiesHour() + ' cookies','2pm: ' + southcenter.totalCookiesHour() + ' cookies','3pm: ' + southcenter.totalCookiesHour() + ' cookies','4pm: ' + southcenter.totalCookiesHour() + ' cookies','5pm: ' + southcenter.totalCookiesHour() + ' cookies'];
+
+var totals3 = []
+var string3 = []
+var total3 = 0
+for(var i=0; i<thymes.length;i++){
+  totals3.push(southcenter.totalCookiesHour())
+  total3 += totals3[i]
+  string3.push(thymes[i]+': '+ totals3[i] + ' cookies')
+}
+string3.push('Total: '+ total3 + ' cookies')
+var times3 = string3
+
 makeUL3(times3);
+
 
 
 
@@ -117,7 +153,18 @@ function makeUL4(array){
   }
   return myList4;
 }
-var times4 = ['10am: ' + bellevue.totalCookiesHour() + ' cookies','11am: ' + bellevue.totalCookiesHour() + ' cookies','12pm: ' + bellevue.totalCookiesHour() + ' cookies','1pm: ' + bellevue.totalCookiesHour() + ' cookies','2pm: ' + bellevue.totalCookiesHour() + ' cookies','3pm: ' + bellevue.totalCookiesHour() + ' cookies','4pm: ' + bellevue.totalCookiesHour() + ' cookies','5pm: ' + bellevue.totalCookiesHour() + ' cookies'];
+
+var totals4 = []
+var string4 = []
+var total4 = 0
+for(var i=0; i<thymes.length;i++){
+  totals4.push(bellevue.totalCookiesHour())
+  total4 += totals4[i]
+  string4.push(thymes[i]+': '+ totals4[i] + ' cookies')
+}
+string4.push('Total: '+ total4 + ' cookies')
+var times4 = string4
+
 makeUL4(times4);
 
 
@@ -147,5 +194,15 @@ function makeUL5(array){
   }
   return myList5;
 }
-var times5 = ['10am: ' + alki.totalCookiesHour() + ' cookies','11am: ' + alki.totalCookiesHour() + ' cookies','12pm: ' + alki.totalCookiesHour() + ' cookies','1pm: ' + alki.totalCookiesHour() + ' cookies','2pm: ' + alki.totalCookiesHour() + ' cookies','3pm: ' + alki.totalCookiesHour() + ' cookies','4pm: ' + alki.totalCookiesHour() + ' cookies','5pm: ' + alki.totalCookiesHour() + ' cookies'];
+
+var totals5 = []
+var string5 = []
+var total5 = 0
+for(var i=0; i<thymes.length;i++){
+  totals5.push(alki.totalCookiesHour())
+  total5 += totals5[i]
+  string5.push(thymes[i]+': '+ totals5[i] + ' cookies')
+}
+string5.push('Total: '+ total5 + ' cookies')
+var times5 = string5
 makeUL5(times5);
