@@ -195,14 +195,14 @@ function makeUL5(array){
   return myList5;
 }
 
-var totals5 = []
-var string5 = []
-var total5 = 0
-for(var i=0; i<thymes.length;i++){
-  totals5.push(alki.totalCookiesHour())
-  total5 += totals5[i]
-  string5.push(thymes[i]+': '+ totals5[i] + ' cookies')
-}
-string5.push('Total: '+ total5 + ' cookies')
-var times5 = string5
+  var totals5 = []
+  var string5 = []
+  var total5 = 0
+  for(var i=0; i<thymes.length;i++){
+    totals5.push(alki.totalCookiesHour())
+    total5 += totals5[i]
+    string5.push(thymes[i]+': '+ totals5[i] + ' cookies')
+  }
+  string5.push('Total: '+ total5 + ' cookies')
+  var times5 = string5
 makeUL5(times5);
