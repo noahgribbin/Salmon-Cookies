@@ -1,208 +1,47 @@
-
-var thymes = ['10am','11am','12pm','1pm','2pm','3pm','4pm','5pm' ]
-
-var pikeplace ={
-  location: 'Pike Place Market',
-  minCustHour:17 ,
-  maxCustHour:88 ,
-  avgCookiesCust:5.2 ,
-  randCustHour: function(min,max){
+var CookieStand = function(place,minCustHour,maxCustHour,avgCookiesCust,id){
+  this.place = place;
+  this.minCustHour = minCustHour;id
+  this.maxCustHour = maxCustHour;
+  this.avgCookiesCust = avgCookiesCust;
+  this.thymes = ['10am','11am','12pm','1pm','2pm','3pm','4pm','5pm' ];
+  this.string = [];
+  this.id = id;
+  this.randCustHour = function (min,max){
     return Math.floor(Math.random()*(max - min +1)) + min;
-  },
-  totalCookiesHour:function (){
-    return Math.floor(pikeplace.randCustHour(pikeplace.maxCustHour,pikeplace.minCustHour) * pikeplace.avgCookiesCust)
+  };
+  this.totalCookiesHour = function (){
+    return Math.floor(this.randCustHour(this.maxCustHour,this.minCustHour) * this.avgCookiesCust)
+  };
+  this.getString = function(){
+    this.string = []
+    var totals = []
+    var total = 0
+    for(var i=0; i<this.thymes.length;i++){
+      totals.push(this.totalCookiesHour())
+      total += totals[i]
+      this.string.push(this.thymes[i]+': '+ totals[i] + ' cookies')
+    }
+    this.string.push('Total: '+ total + ' cookies')
+  };
+  this.makeUL = function(){
+    this.getString()
+    for(var i=0;i<this.string.length;i++){
+      var myList = document.getElementById(this.id)               //grabbing the elements in HTML
+      var item = document.createElement('li')                     //creating an empty list item
+      item.appendChild(document.createTextNode(this.string[i]))   //filling the empty item with the string filled on line 16
+      myList.appendChild(item);                                   //filling the element grabbed on line 29 with the item created on line 30
+    }
+    return myList;
   }
-};
-
-function makeUL(array){
-  for(var i=0;i<array.length;i++){
-      var myList = document.getElementById('list1')
-      var item = document.createElement('li')
-      item.appendChild(document.createTextNode(array[i]))
-      myList.appendChild(item);
-  }
-  return myList;
 }
+var pikeplace = new CookieStand('Pike Place Market',17,88,5.2,'pikeplace');
+var seatac = new CookieStand('Seatac Airport',6,44,1.2,'seatac');
+var southcenter = new CookieStand('Southcenter Mall',11,38,1.9,'southcenter');
+var bellevue = new CookieStand('Bellevue Square',20,48,3.3,'bellevue');
+var alki = new CookieStand('Alki',3,24,2.6,'alki');
 
-var totals1 = []
-var string1 = []
-var total1 = 0
-for(var i=0; i<thymes.length;i++){
-  totals1.push(pikeplace.totalCookiesHour())
-  total1 += totals1[i]
-  string1.push(thymes[i]+': '+ totals1[i] + ' cookies')
-}
-string1.push('Total: '+ total1 + ' cookies')
-var times1 = string1
-
-makeUL(times1);
-
-
-
-
-
-
-
-var seatac ={
-  location: 'Seatac Airport',
-  minCustHour:6 ,
-  maxCustHour:44 ,
-  avgCookiesCust:1.2 ,
-  randCustHour: function(min,max){
-    return Math.floor(Math.random()*(max - min +1)) + min;
-  },
-  totalCookiesHour:function (){
-    return Math.floor(seatac.randCustHour(seatac.maxCustHour,seatac.minCustHour) * seatac.avgCookiesCust)
-  }
-};
-
-function makeUL2(array){
-  for(var i=0;i<array.length;i++){
-      var myList2 = document.getElementById('seatac')
-      var item = document.createElement('li')
-      item.appendChild(document.createTextNode(array[i]))
-      myList2.appendChild(item);
-  }
-  return myList2;
-}
-
-var totals2 = []
-var string2 = []
-var total2 = 0
-for(var i=0; i<thymes.length;i++){
-  totals2.push(seatac.totalCookiesHour())
-  total2 += totals2[i]
-  string2.push(thymes[i]+': '+ totals2[i] + ' cookies')
-}
-string2.push('Total: '+ total2 + ' cookies')
-var times2 = string2
-
-makeUL2(times2);
-
-
-
-
-
-
-
-
-var southcenter ={
-  location: 'South Center Mall',
-  minCustHour:11 ,
-  maxCustHour:38 ,
-  avgCookiesCust:1.9 ,
-  randCustHour: function(min,max){
-    return Math.floor(Math.random()*(max - min +1)) + min;
-  },
-  totalCookiesHour:function (){
-    return Math.floor(southcenter.randCustHour(southcenter.maxCustHour,southcenter.minCustHour) * southcenter.avgCookiesCust)
-  }
-};
-
-function makeUL3(array){
-  for(var i=0;i<array.length;i++){
-      var myList3 = document.getElementById('southcenter')
-      var item = document.createElement('li')
-      item.appendChild(document.createTextNode(array[i]))
-      myList3.appendChild(item);
-  }
-  return myList3;
-}
-
-var totals3 = []
-var string3 = []
-var total3 = 0
-for(var i=0; i<thymes.length;i++){
-  totals3.push(southcenter.totalCookiesHour())
-  total3 += totals3[i]
-  string3.push(thymes[i]+': '+ totals3[i] + ' cookies')
-}
-string3.push('Total: '+ total3 + ' cookies')
-var times3 = string3
-
-makeUL3(times3);
-
-
-
-
-
-
-
-
-
-
-var bellevue ={
-  location: 'Bellevue Square',
-  minCustHour:20 ,
-  maxCustHour:48 ,
-  avgCookiesCust:3.3 ,
-  randCustHour: function(min,max){
-    return Math.floor(Math.random()*(max - min +1)) + min;
-  },
-  totalCookiesHour:function (){
-    return Math.floor(bellevue.randCustHour(bellevue.maxCustHour,bellevue.minCustHour) * bellevue.avgCookiesCust)
-  }
-};
-
-function makeUL4(array){
-  for(var i=0;i<array.length;i++){
-      var myList4 = document.getElementById('bellevue')
-      var item = document.createElement('li')
-      item.appendChild(document.createTextNode(array[i]))
-      myList4.appendChild(item);
-  }
-  return myList4;
-}
-
-var totals4 = []
-var string4 = []
-var total4 = 0
-for(var i=0; i<thymes.length;i++){
-  totals4.push(bellevue.totalCookiesHour())
-  total4 += totals4[i]
-  string4.push(thymes[i]+': '+ totals4[i] + ' cookies')
-}
-string4.push('Total: '+ total4 + ' cookies')
-var times4 = string4
-
-makeUL4(times4);
-
-
-
-
-
-
-var alki ={
-  location: 'Alki',
-  minCustHour:3 ,
-  maxCustHour:24 ,
-  avgCookiesCust:2.6 ,
-  randCustHour: function(min,max){
-    return Math.floor(Math.random()*(max - min +1)) + min;
-  },
-  totalCookiesHour:function (){
-    return Math.floor(alki.randCustHour(alki.maxCustHour,alki.minCustHour) * alki.avgCookiesCust)
-  }
-};
-
-function makeUL5(array){
-  for(var i=0;i<array.length;i++){
-      var myList5 = document.getElementById('alki')
-      var item = document.createElement('li')
-      item.appendChild(document.createTextNode(array[i]))
-      myList5.appendChild(item);
-  }
-  return myList5;
-}
-
-  var totals5 = []
-  var string5 = []
-  var total5 = 0
-  for(var i=0; i<thymes.length;i++){
-    totals5.push(alki.totalCookiesHour())
-    total5 += totals5[i]
-    string5.push(thymes[i]+': '+ totals5[i] + ' cookies')
-  }
-  string5.push('Total: '+ total5 + ' cookies')
-  var times5 = string5
-makeUL5(times5);
+pikeplace.makeUL();
+seatac.makeUL();
+southcenter.makeUL();
+bellevue.makeUL();
+alki.makeUL();

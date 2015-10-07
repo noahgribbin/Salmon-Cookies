@@ -1,29 +1,16 @@
 body{
   font-family: Roboto;
-  background-color:grey;
-  color:black;
+  background-color:#FFF1E6;
+  color:#0E473F;
 }
-#list1{
+.text{
   font-family:arial;
-  color:red;
+  color:#3C2811;    /*FF654D*/
 }
-#seatac{
-  font-family:arial;
-  color:red;
-}
-#southcenter{
-  font-family:arial;
-  color:red;
-}
-#bellevue{
-  font-family:arial;
-  color:red;
-}
-#alki{
-  font-family:arial;
-  color:red;
-}
-.special{
+.data{
   font-family:Georgia;
-  color:blue;
+  color:#FF6F32;
+}
+#salmon{
+  width:200px;
 }
