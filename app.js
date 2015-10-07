@@ -19,19 +19,28 @@ var CookieStand = function(place,minCustHour,maxCustHour,avgCookiesCust,id){
     for(var i=0; i<this.thymes.length;i++){
       totals.push(this.totalCookiesHour())
       total += totals[i]
-      this.string.push(this.thymes[i]+': '+ totals[i] + ' cookies')
+      this.string.push(totals[i])
     }
-    this.string.push('Total: '+ total + ' cookies')
+    this.string.push(total)
   };
-  this.makeUL = function(){
+  this.makeTable = function(){
     this.getString()
-    for(var i=0;i<this.string.length;i++){
-      var myList = document.getElementById(this.id)               //grabbing the elements in HTML
-      var item = document.createElement('li')                     //creating an empty list item
-      item.appendChild(document.createTextNode(this.string[i]))   //filling the empty item with the string filled on line 16
-      myList.appendChild(item);                                   //filling the element grabbed on line 29 with the item created on line 30
+    var table = document.getElementById("the-table");
+    var row = table.insertRow(-1);
+    var cell = row.insertCell(-1);
+    cell.innerHTML = this.place
+    for(var i = 0; i <this.string.length-1; i++){
+      var cell = row.insertCell(-1);
+      cell.innerHTML = this.string[i]
     }
-    return myList;
+    var cell = row.insertCell(-1);
+    cell.innerHTML = this.string[8]
+
+    // document.getElementById('the-table').appendChild('<tr>')
+    // for(var i=0;i<this.string.length;i++){
+    // document.getElementById('the-table').appendChild("<td> "+this.string[i]+"</td>");
+    // }
+    // document.write('</tr>')
   }
 }
 var pikeplace = new CookieStand('Pike Place Market',17,88,5.2,'pikeplace');
@@ -40,8 +49,8 @@ var southcenter = new CookieStand('Southcenter Mall',11,38,1.9,'southcenter');
 var bellevue = new CookieStand('Bellevue Square',20,48,3.3,'bellevue');
 var alki = new CookieStand('Alki',3,24,2.6,'alki');
 
-pikeplace.makeUL();
-seatac.makeUL();
-southcenter.makeUL();
-bellevue.makeUL();
-alki.makeUL();
+pikeplace.makeTable();
+seatac.makeTable();
+southcenter.makeTable();
+bellevue.makeTable();
+alki.makeTable();
