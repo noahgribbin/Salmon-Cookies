@@ -26,10 +26,10 @@ var CookieStand = function(place,minCustHour,maxCustHour,avgCookiesCust,id){
   this.makeUL = function(){
     this.getString()
     for(var i=0;i<this.string.length;i++){
-      var myList = document.getElementById(this.id)
-      var item = document.createElement('li')
-      item.appendChild(document.createTextNode(this.string[i]))
-      myList.appendChild(item);
+      var myList = document.getElementById(this.id)               //grabbing the elements in HTML
+      var item = document.createElement('li')                     //creating an empty list item
+      item.appendChild(document.createTextNode(this.string[i]))   //filling the empty item with the string filled on line 16
+      myList.appendChild(item);                                   //filling the element grabbed on line 29 with the item created on line 30
     }
     return myList;
   }

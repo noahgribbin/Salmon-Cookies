@@ -1,15 +1,15 @@
 body{
   font-family: Roboto;
-  background-color:#191C59;
-  color:black;
+  background-color:#FFF1E6;
+  color:#0E473F;
 }
 .text{
   font-family:arial;
-  color:#A7383E;
+  color:#3C2811;    /*FF654D*/
 }
 .data{
   font-family:Georgia;
-  color:#599532;
+  color:#FF6F32;
 }
 #salmon{
   width:200px;
