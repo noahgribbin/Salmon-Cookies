@@ -5,7 +5,14 @@ body{
 }
 .text{
   font-family:arial;
-  color:#3C2811;    /*FF654D*/
+  color:#3C2811;
+}
+.history{
+  font-family:arial;
+  color:#3C2811;
+   border: 2px solid black;
+  margin:5px;
+  padding:5px;
 }
 .data{
   font-family:Georgia;
@@ -13,4 +20,27 @@ body{
 }
 #salmon{
   width:200px;
+}
+img.salmon2{
+  width:200px;
+}
+#heading{
+  text-align: center;
+}
+.info{
+  text-align: left;
+}
+.bad-pics{
+  width:200px;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+#shirt-info{
+  color:#3C2811;
+}
+#salmon-wrap{
+  text-align: center;
+}
+#link{
+  text-align: center;
 }
