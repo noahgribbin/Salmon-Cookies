@@ -10,7 +10,8 @@ body{
 .history{
   font-family:arial;
   color:#3C2811;
-   border: 2px solid black;
+  background-color:#FF9365;
+  border: 2px solid black;
   margin:5px;
   padding:5px;
 }
@@ -26,6 +27,7 @@ img.salmon2{
 }
 #heading{
   text-align: center;
+  background-color:#FF5726;
 }
 .info{
   text-align: left;
@@ -40,6 +42,7 @@ img.salmon2{
 }
 #salmon-wrap{
   text-align: center;
+
 }
 #link{
   text-align: center;
