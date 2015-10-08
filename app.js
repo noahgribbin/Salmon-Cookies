@@ -35,12 +35,6 @@ var CookieStand = function(place,minCustHour,maxCustHour,avgCookiesCust,id){
     }
     var cell = row.insertCell(-1);
     cell.innerHTML = this.string[8]
-
-    // document.getElementById('the-table').appendChild('<tr>')
-    // for(var i=0;i<this.string.length;i++){
-    // document.getElementById('the-table').appendChild("<td> "+this.string[i]+"</td>");
-    // }
-    // document.write('</tr>')
   }
 }
 var pikeplace = new CookieStand('Pike Place Market',17,88,5.2,'pikeplace');

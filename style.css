@@ -1,3 +1,5 @@
+
+/*body*/
 body{
   font-family: Roboto;
   background-color:#FFF1E6;
@@ -19,31 +21,39 @@ body{
   font-family:Georgia;
   color:#FF6F32;
 }
-#salmon{
-  width:200px;
-}
-img.salmon2{
-  width:200px;
-}
-#heading{
-  text-align: center;
-  background-color:#FF5726;
-}
 .info{
   text-align: left;
 }
+#shirt-info{
+  color:#3C2811;
+}
+/*body pics*/
 .bad-pics{
   width:200px;
   padding-left: 120px;
   padding-right: 120px;
 }
-#shirt-info{
-  color:#3C2811;
+#link{
+  text-align: center;
+}
+/*heading*/
+img.salmon2{
+  width:200px;
+}
+#heading{
+  text-align: center;
+  background-color:#FF9880;
+  color:#18536F;
+}
+#total-header{
+  max-width: 600px;
+  margin: auto;
+  border-radius:1%;
 }
 #salmon-wrap{
   text-align: center;
-
 }
-#link{
-  text-align: center;
+/*table*/
+table, th, td {
+    border: 1px solid black;
 }
