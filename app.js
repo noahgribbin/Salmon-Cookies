@@ -48,3 +48,6 @@ seatac.makeTable();
 southcenter.makeTable();
 bellevue.makeTable();
 alki.makeTable();
+//
+var form = document.getElementById("form");
+console.log(form);
