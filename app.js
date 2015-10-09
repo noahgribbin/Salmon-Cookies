@@ -1,11 +1,10 @@
-var CookieStand = function(place,minCustHour,maxCustHour,avgCookiesCust,id){
+var CookieStand = function(place,minCustHour,maxCustHour,avgCookiesCust){
   this.place = place;
-  this.minCustHour = minCustHour;id
+  this.minCustHour = minCustHour;
   this.maxCustHour = maxCustHour;
   this.avgCookiesCust = avgCookiesCust;
   this.thymes = ['10am','11am','12pm','1pm','2pm','3pm','4pm','5pm' ];
   this.string = [];
-  this.id = id;
   this.randCustHour = function (min,max){
     return Math.floor(Math.random()*(max - min +1)) + min;
   };
@@ -37,17 +36,28 @@ var CookieStand = function(place,minCustHour,maxCustHour,avgCookiesCust,id){
     cell.innerHTML = this.string[8]
   }
 }
-var pikeplace = new CookieStand('Pike Place Market',17,88,5.2,'pikeplace');
-var seatac = new CookieStand('Seatac Airport',6,44,1.2,'seatac');
-var southcenter = new CookieStand('Southcenter Mall',11,38,1.9,'southcenter');
-var bellevue = new CookieStand('Bellevue Square',20,48,3.3,'bellevue');
-var alki = new CookieStand('Alki',3,24,2.6,'alki');
-
+var pikeplace = new CookieStand('Pike Place Market',17,88,5.2);
+var seatac = new CookieStand('Seatac Airport',6,44,1.2);
+var southcenter = new CookieStand('Southcenter Mall',11,38,1.9);
+var bellevue = new CookieStand('Bellevue Square',20,48,3.3);
+var alki = new CookieStand('Alki',3,24,2.6);
 pikeplace.makeTable();
 seatac.makeTable();
 southcenter.makeTable();
 bellevue.makeTable();
 alki.makeTable();
-//
 var form = document.getElementById("form");
-console.log(form);
+// Stores form data for table editing
+function submitForm(){
+  makeUserRow() //When you hit submit it should make a row so <---
+};
+// Creates a row in the sales table from form data
+function makeUserRow(){
+  var location = form.elements['location'].value
+  var minCookies = Number(form.elements['min customer'].value)
+  var maxCookies = Number(form.elements['max customer'].value)
+  var avgCookies = Number(form.elements['avg cookies cust'].value)
+  // console.log(minCookies+4) found out properties were loging as string
+  var cookieStand = new CookieStand(location,minCookies,maxCookies,avgCookies)
+  cookieStand.makeTable()
+};
