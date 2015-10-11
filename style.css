@@ -40,6 +40,9 @@ body{
 img.salmon2{
   width:200px;
 }
+#sales-salmon{
+  text-align: center;
+}
 #heading{
   text-align: center;
   background-color:#FF9880;
